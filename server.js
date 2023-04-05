@@ -2,6 +2,7 @@ import express from "express";
 import connectDB from "./db/connect.js";
 import notFoundMiddleware from "./middleware/not-found.js";
 import authRouter from "./routes/authRoutes.js";
+import jobsRouter from "./routes/jobsRoutes.js";
 import dotenv from "dotenv";
 dotenv.config();
 
@@ -14,6 +15,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/v1/auth", authRouter);
+app.use("/api/v1/jobs", jobsRouter);
 
 app.use(notFoundMiddleware);
 
