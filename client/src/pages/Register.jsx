@@ -1,12 +1,13 @@
 import { useState } from "react";
 import Wrapper from "../assets/wrappers/RegisterPage";
-import { Logo, FormRow } from "../components";
+import { Logo, FormRow, Alert } from "../components";
 
 const initialState = {
   name: "",
   email: "",
   password: "",
   isMember: true,
+  showAlert: false,
 };
 
 const Register = () => {
@@ -25,6 +26,7 @@ const Register = () => {
       <form className="form" onSubmit={handleSubmit}>
         <Logo />
         <h3>Login</h3>
+        {values.showAlert && <Alert />}
         <FormRow
           labelText="name"
           name="name"
