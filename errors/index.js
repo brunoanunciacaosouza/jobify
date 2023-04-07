@@ -1,5 +1,5 @@
 import BadRequestError from "./bad-request.js";
 import NotFoundError from "./not-found.js";
-import Unauthenticated from "./unauthenticated.js";
+import UnAuthenticatedError from "./unauthenticated.js";
 
-export { BadRequestError, NotFoundError, Unauthenticated };
+export { BadRequestError, NotFoundError, UnAuthenticatedError };
