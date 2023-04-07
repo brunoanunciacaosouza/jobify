@@ -1,3 +1,4 @@
+import "express-async-errors";
 import express from "express";
 import connectDB from "./db/connect.js";
 import notFoundMiddleware from "./middleware/not-found.js";
