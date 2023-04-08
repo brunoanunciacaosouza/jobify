@@ -54,7 +54,7 @@ const Register = () => {
   useEffect(() => {
     if (user) {
       setTimeout(() => {
-        navigate("/");
+        navigate("/stats");
       }, 3000);
     }
   }, [user, navigate]);
