@@ -51,8 +51,8 @@ const AppProvider = ({ children }) => {
 
   const removeUserFromLocalStorage = () => {
     localStorage.removeItem("user");
-    localStorage.setItem("token");
-    localStorage.setItem("location");
+    localStorage.removeItem("token");
+    localStorage.removeItem("location");
   };
 
   const setupUser = async ({ currentUser, endPoint, alertText }) => {
