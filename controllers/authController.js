@@ -24,7 +24,7 @@ const register = async (req, res) => {
       email: user.email,
       location: user.location,
     },
-    token,
+    token: token,
     location: user.location,
   });
 };
