@@ -1,6 +1,6 @@
-import { createContext, useContext, useReducer } from "react";
-import axios from "axios";
-import reducer from "./reducer";
+import { createContext, useContext, useReducer } from 'react';
+import axios from 'axios';
+import reducer from './reducer';
 import {
   DISPLAY_ALERT,
   CLEAR_ALERT,
@@ -9,21 +9,21 @@ import {
   SETUP_USER_ERROR,
   TOGGLE_SIDEBAR,
   LOGOUT_USER,
-} from "./actions";
+} from './actions';
 
-const user = localStorage.getItem("user");
-const token = localStorage.getItem("token");
-const userLocation = localStorage.getItem("location");
+const user = localStorage.getItem('user');
+const token = localStorage.getItem('token');
+const userLocation = localStorage.getItem('location');
 
 const initialState = {
   isLoading: false,
   showAlert: false,
-  alertText: "",
-  alertType: "",
+  alertText: '',
+  alertType: '',
   user: user ? JSON.parse(user) : null,
   token: token ? JSON.parse(user) : null,
-  userLocation: userLocation || "",
-  jobLocation: userLocation || "",
+  userLocation: userLocation || '',
+  jobLocation: userLocation || '',
   showSidebar: false,
 };
 
@@ -44,15 +44,15 @@ const AppProvider = ({ children }) => {
   };
 
   const addUserToLocalStorage = ({ user, token, location }) => {
-    localStorage.setItem("user", JSON.stringify(user));
-    localStorage.setItem("token", token);
-    localStorage.setItem("location", location);
+    localStorage.setItem('user', JSON.stringify(user));
+    localStorage.setItem('token', token);
+    localStorage.setItem('location', location);
   };
 
   const removeUserFromLocalStorage = () => {
-    localStorage.removeItem("user");
-    localStorage.removeItem("token");
-    localStorage.removeItem("location");
+    localStorage.removeItem('user');
+    localStorage.removeItem('token');
+    localStorage.removeItem('location');
   };
 
   const setupUser = async ({ currentUser, endPoint, alertText }) => {
@@ -88,9 +88,20 @@ const AppProvider = ({ children }) => {
     removeUserFromLocalStorage();
   };
 
+  const updateUser = async (currentUser) => {
+    console.log(currentUser);
+  };
+
   return (
     <AppContext.Provider
-      value={{ ...state, displayAlert, setupUser, toggleSidebar, logoutUser }}
+      value={{
+        ...state,
+        displayAlert,
+        setupUser,
+        toggleSidebar,
+        logoutUser,
+        updateUser,
+      }}
     >
       {children}
     </AppContext.Provider>
