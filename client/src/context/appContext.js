@@ -17,6 +17,8 @@ import {
   CREATE_JOB_BEGIN,
   CREATE_JOB_SUCCESS,
   CREATE_JOB_ERROR,
+  GET_JOBS_BEGIN,
+  GET_JOBS_SUCCESS,
 } from './actions';
 
 const user = localStorage.getItem('user');
@@ -41,6 +43,10 @@ const initialState = {
   jobType: 'full-time',
   statusOptions: ['pending', 'interview', 'declined'],
   status: 'pending',
+  jobs: [],
+  totalJobs: 0,
+  numOfPages: 1,
+  page: 1,
 };
 
 const AppContext = createContext();
