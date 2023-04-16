@@ -129,6 +129,7 @@ const reducer = (state, action) => {
   if (action.type === CREATE_JOB_BEGIN) {
     return { ...state, isLoading: true };
   }
+
   if (action.type === CREATE_JOB_SUCCESS) {
     return {
       ...state,
@@ -138,6 +139,7 @@ const reducer = (state, action) => {
       alertText: 'New Job Created!',
     };
   }
+
   if (action.type === CREATE_JOB_ERROR) {
     return {
       ...state,
@@ -145,6 +147,20 @@ const reducer = (state, action) => {
       showAlert: true,
       alertType: 'danger',
       alertText: action.payload.msg,
+    };
+  }
+
+  if (action.type === GET_JOBS_BEGIN) {
+    return { ...state, isLoading: true, showAlert: false };
+  }
+
+  if (action.type === GET_JOBS_SUCCESS) {
+    return {
+      ...state,
+      isLoading: false,
+      jobs: action.payload.jobs,
+      totalJobs: action.payload.totalJobs,
+      numOfPages: action.payload.numOfPages,
     };
   }
 
