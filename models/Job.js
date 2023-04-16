@@ -1,14 +1,11 @@
 import mongoose from 'mongoose';
-import validator from 'validator';
-import bcrypt from 'bcryptjs';
-import jwt from 'jsonwebtoken';
 
 const JobSchema = new mongoose.Schema(
   {
     company: {
       type: String,
-      required: [true, 'Please provide company'],
-      maxlength: 20,
+      required: [true, 'Please provide company name'],
+      maxlength: 50,
     },
     position: {
       type: String,
@@ -20,6 +17,7 @@ const JobSchema = new mongoose.Schema(
       enum: ['interview', 'declined', 'pending'],
       default: 'pending',
     },
+
     jobType: {
       type: String,
       enum: ['full-time', 'part-time', 'remote', 'internship'],
@@ -28,7 +26,7 @@ const JobSchema = new mongoose.Schema(
     jobLocation: {
       type: String,
       default: 'my city',
-      required: [true, 'Please provide jobLocation'],
+      required: true,
     },
     createdBy: {
       type: mongoose.Types.ObjectId,
@@ -39,4 +37,4 @@ const JobSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-export default mongoose.Schema('Job', JobSchema);
+export default mongoose.model('Job', JobSchema);

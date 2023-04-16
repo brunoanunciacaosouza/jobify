@@ -1,21 +1,25 @@
+import Job from '../models/Job.js';
+import { StatusCodes } from 'http-status-codes';
+import { BadRequestError, NotFoundError } from '../errors/index.js';
+
 const createJob = async (req, res) => {
-  res.send("create job");
+  res.send('create job');
 };
 
 const getAllJobs = async (req, res) => {
-  res.send("get all job");
+  res.send('get all job');
 };
 
 const updateJob = async (req, res) => {
-  res.send("update job");
+  res.send('update job');
 };
 
 const deleteJob = async (req, res) => {
-  res.send("delete job");
+  res.send('delete job');
 };
 
 const showStats = async (req, res) => {
-  res.send("show stats");
+  res.send('show stats');
 };
 
 export { createJob, getAllJobs, deleteJob, updateJob, showStats };
