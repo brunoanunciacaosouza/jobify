@@ -53,12 +53,13 @@ const deleteJob = async (req, res) => {
   const job = await Job.findOne({ _id: jobId });
 
   if (!job) {
-    throw new NotFoundError(`No job with id : ${jobId}`);
+    throw new NotFoundError(`No job with id :${jobId}`);
   }
 
   checkPermissions(req.user, job.createdBy);
 
-  await job.remove();
+  await Job.findOneAndRemove({ _id: jobId });
+
   res.status(StatusCodes.OK).json({ msg: 'Success! Job removed' });
 };
 
