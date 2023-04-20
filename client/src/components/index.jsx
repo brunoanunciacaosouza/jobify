@@ -13,7 +13,7 @@ import Loading from './Loading';
 import JobInfo from './JobInfo';
 import StatsContainer from './StatsContainer';
 import ChartsContainer from './ChartsContainer';
-import StatsItem from './StatsItem';
+import StatItem from './StatItem';
 
 export {
   Logo,
@@ -31,5 +31,5 @@ export {
   JobInfo,
   StatsContainer,
   ChartsContainer,
-  StatsItem,
+  StatItem,
 };
