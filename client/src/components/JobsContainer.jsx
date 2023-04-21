@@ -3,6 +3,7 @@ import { Loading, Job } from '../components';
 import { useAppContext } from '../context/appContext';
 import Wrapper from '../assets/wrappers/JobsContainer';
 import { useEffect } from 'react';
+import PageBtnContainer from './PageBtnContainer';
 
 const JobsContainer = () => {
   const {
@@ -10,6 +11,7 @@ const JobsContainer = () => {
     jobs,
     isLoading,
     page,
+    numOfPages,
     totalJobs,
     search,
     searchStatus,
@@ -43,6 +45,7 @@ const JobsContainer = () => {
           return <Job key={job._id} {...job} />;
         })}
       </div>
+      {numOfPages > 1 && <PageBtnContainer />}
     </Wrapper>
   );
 };
