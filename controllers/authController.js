@@ -29,7 +29,6 @@ const register = async (req, res) => {
       email: user.email,
       location: user.location,
     },
-    token,
     location: user.location,
   });
 };
@@ -56,7 +55,7 @@ const login = async (req, res) => {
 
   attachCookie({ res, token });
 
-  res.status(StatusCodes.OK).json({ user, location: user.location, token });
+  res.status(StatusCodes.OK).json({ user, location: user.location });
 };
 
 const updateUser = async (req, res) => {
@@ -79,7 +78,7 @@ const updateUser = async (req, res) => {
 
   attachCookie({ res, token });
 
-  res.status(StatusCodes.OK).json({ user, token, location: user.location });
+  res.status(StatusCodes.OK).json({ user, location: user.location });
 };
 
 export { register, login, updateUser };
