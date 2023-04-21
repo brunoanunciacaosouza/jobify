@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import BarChart from './BarChart';
+import BarChartComponent from './BarChartComponent';
 import AreaChart from './AreaChart';
 import Wrapper from '../assets/wrappers/ChartsContainer';
 import { useAppContext } from '../context/appContext';
@@ -13,7 +13,7 @@ const ChartsContainer = () => {
       <button type='button' onClick={() => setBarChart(!barChart)}>
         {barChart ? 'AreaChart' : 'BarChart'}
       </button>
-      {barChart ? <BarChart data={data} /> : <AreaChart data={data} />}
+      {barChart ? <BarChartComponent data={data} /> : <AreaChart data={data} />}
     </Wrapper>
   );
 };
