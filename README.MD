@@ -67,7 +67,7 @@ MERN Stack Application for tracking Job Search Process
 1. Clone the repo
 
    ```sh
-   git clone https://github.com/abdrahmansoltan/jobify.git
+   git clone git@github.com:brunoanunciacaosouza/jobify.git
    ```
 
 2. go to project folder
